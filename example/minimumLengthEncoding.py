@@ -18,12 +18,13 @@ class Solution:
     def minimumLengthEncoding(self, words: List[str]) -> int:
         set_words = set(words)
         for word in words:
-            for i in range(1, len(word) - 1):
+            word_length = len(word)
+            for i in range(1, word_length):
                 set_words.discard(word[i:])
         return sum(len(_) + 1 for _ in set_words)
 
 
 if __name__ == '__main__':
-    words = ["time", "me", "bell"]
+    words = ["time", "me", "bell", 'l']
     res = Solution().minimumLengthEncoding(words)
     print(res)
