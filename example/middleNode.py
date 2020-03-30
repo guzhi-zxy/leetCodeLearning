@@ -9,15 +9,17 @@
 如果有两个中间结点，则返回第二个中间结点。
 """
 
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
 
+
 class Solution:
     def middleNode(self, head: ListNode) -> ListNode:
-        fast, slow = head
+        fast, slow = head, head
         while fast and fast.next:
             if fast == slow:
                 break
@@ -26,18 +28,21 @@ class Solution:
 
         return slow
 
+
 def run(nums):
     head = ListNode(nums[0])
     cur = head
     for i in range(1, len(nums)):
         cur.next = ListNode(nums[i])
         cur = cur.next
+
+    for node in link_list.iter():
+        print('node is {0}'.format(node))
     return head
 
 
 if __name__ == '__main__':
-    nums = [1,2,3,4,5,6]
+    nums = [1, 2, 3, 4, 5, 6]
     head = run(nums)
     res = Solution().middleNode(head)
-    print(res)
-
+    print(list)
