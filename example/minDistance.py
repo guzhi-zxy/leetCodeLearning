@@ -17,8 +17,7 @@
 
 class Solution:
     def minDistance(self, word1: str, word2: str) -> int:
-        l1 = len(word1)
-        l2 = len(word2)
+        l1, l2 = len(word1), len(word2)
         dp = [[0] * (l2 + 1) for _ in range(l1 + 1)]
         # 第一列
         for i in range(1, l1 + 1):
